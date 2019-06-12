@@ -1,14 +1,11 @@
 # function that calculates the arithmetic average
-def func():
-    return sum / len(b)
+def arithmetic_average(num):
+        sum = 0
+        for i in num:
+            sum += int(i)
+        return sum / len(num)
 
 if __name__ == '__main__':
-    a = input('cherez probel ')
-    b = a.split(' ')
-    sum = 0
-    for i in b:
-        sum += int(i)
-    print('sum is ')
-    func()
-    
-        
+    list = input('Instert numbers separated by spaces ')
+    split_list = list.split(' ')
+    print('Arithmetic average is ', arithmetic_average(split_list))
