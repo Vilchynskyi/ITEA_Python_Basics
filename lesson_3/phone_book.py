@@ -18,3 +18,9 @@ def count_same_numbers(contact_book):
         if a:
             sum += 1
     return sum
+
+
+def delete_contact(contact_book, name):
+    if contact_book.get(name) is not None:
+        contact_book.pop(name)
+        return 'Contact successfully deleted'

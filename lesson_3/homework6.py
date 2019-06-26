@@ -2,6 +2,7 @@ import re
 from phone_book import (find_contact_by_name,
                         find_contact_by_phone,
                         count_same_numbers,
+                        delete_contact
                         )
 
 
@@ -32,16 +33,7 @@ if __name__ == '__main__':
             print('Contact was successfully changed \n')
         elif user_input == 5:
             user_input = input('Insert contact name which you want to delete ')
-            for key, value in contact_book.items():
-                if key == user_input:
-                    print('Do you want to delete ?', key, value)
-                    break
-            user_choice = int(input('1 - Yes\n2 - No: '))
-            if user_choice == 1:
-                contact_book.pop(key)
-                print('Contact was deleted\n')
-            elif user_choice == 2:
-                print('Maybe next time)\n')
+            print(delete_contact(contact_book, user_input))
         elif user_input == 6:
             print(count_same_numbers(contact_book))
         user_input = int(input('\nWhat to do? '))
